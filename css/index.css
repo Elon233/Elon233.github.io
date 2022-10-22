@@ -1,0 +1,70 @@
+body {
+	font-family: "Roboto","Lucida Grande","DejaVu Sans",
+				 "Bitstream Vera Sans",Verdana,Arial,sans-serif;
+	background-color: #f8f8f8;
+	}
+form {
+	font-size: 14px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+	background-color: white;
+	/* position: relative; */
+	border: 1px solid #eaeaea;
+	border-radius: 4px;
+	width: 28em;
+	min-width: 300px;
+	margin: 100px auto;
+}
+input[type=text], input[type=password] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 6px;
+    margin-top: 0;
+}
+h5 {
+	color: #fff;
+	position: relative;
+	bottom: 10px;
+	font-weight: 350;
+}
+#header {
+	padding-left: 37%;
+	border: 1px solid #999999;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	/* justify-content: center; */
+	background-color: #930093;
+	display: flex;
+	font-size: 20px;
+	height: 50px;
+}
+#content {
+	padding: 15px 50px;
+	position: relative;
+	top: 0;
+	justify-content: center
+} 
+input[type=submit] {
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	background: #9b009b;
+}
+.submit_row {
+	padding-left: 40%;
+	padding-top: 1.5em;
+}
+a:link {
+	text-decoration: none;
+	color: #000;
+	}
+a:hover {
+	text-decoration: underline;
+	color: #00f;
+}
+footer {
+	font-family: "宋体";
+	font-weight: 200;
+	text-align: center;
+}

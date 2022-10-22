@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <title>首页</title>
+    <link rel="stylesheet" href="css\index.css" />
+  </head>
+  <body>
+    <div>
+      <form>
+        <div id="header">
+          <h5>制作界面</h5>
+        </div>
+        <div id="content">
+          <!--<label for="type">类别：</label>-->
+          <!--<input type="text" id="type" placeholder="只能输入'返校码'或者'进校码'!"/>-->
+          <!--<br />-->
+          
+          <label for="stud_name">姓名：</label>
+          <input type="text" id="stud_name" placeholder="输入姓名" />
+          <br />
+          
+          <label for="stud_id">学号：</label>
+          <input type="text" id="stud_id" placeholder="输入学号" />
+          <br />
+          
+          <label for="stud_faculty">学院：</label>
+          <input type="text" id="stud_faculty" placeholder="输入学院名" />
+          <br />
+          
+          类别：
+          <label>
+              <input type="radio" name="type_choose" id="in" value="进校码" checked="checked"/>进校码
+          </label>
+          <label>
+              <input type="radio" name="type_choose" id="out" value="出校码" />出校码
+          </label>
+          <br />
+          
+          大门：
+          <label>
+              <input type="radio" name="door_choose" id="south" value="东南门" checked="checked" />东南门
+          </label>
+          <label>
+              <input type="radio" name="door_choose" id="west" value="西门" />西门
+          </label>
+          <br />
+          
+          <input type="checkbox" id="check" />
+          <label for="checkbox">我保证对该工具的使用仅限于学习目的!</label>
+          <br />
+          <div class="submit_row">
+            <input
+              type="submit"
+              value="制作"
+              onclick="make()"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <br />
+
+    <footer style="font-size: small;">
+      <p>author:Culaccino</p>
+      <p>
+        <script type="text/javascript">
+          var date = new Date();
+          document.write(date);
+        </script>
+      </p>
+    </footer>
+
+    <script type="text/javascript">
+      function make() {
+          var stud_name = document.getElementById("stud_name").value;
+          var stud_id = document.getElementById("stud_id").value;
+          var stud_faculty = document.getElementById("stud_faculty").value;
+          var status = document.getElementById("check");
+          var type_choose = document.getElementsByName("type_choose");
+          var door_choose = document.getElementsByName("door_choose");
+          
+          var type_checked, door_checked;
+          for(var i=0;i<type_choose.length;i++){
+              if(type_choose[i].checked){
+                  type_checked = type_choose[i].value;
+              }if(door_choose[i].checked){
+                  door_checked = door_choose[i].value;
+              }
+          }
+          // console.log(type);
+          // console.log(status);
+          // alert(status.checked);
+          // alert(typeof(type));
+          
+          document.cookie = "stud_name="+stud_name;
+          document.cookie = "stud_id="+stud_id;
+          document.cookie = "stud_faculty="+stud_faculty;
+          document.cookie = "stud_door="+door_checked;
+          // document.cookie = "stud_style="+style;
+          
+          if(status.checked == false){
+            alert("存在未选中选项!");
+          }else {
+              if(type_checked == "进校码"){
+                window.open("in.html");
+                // window.location.href="in.html";
+              }else if(type_checked == "出校码"){
+                window.open("out.html");
+              }else {
+                alert("请在'进校码'与'出校码'中进行选择，而不是其他选项!");
+              }
+          }
+          
+      }
+  </script>
+  </body>
+</html>
